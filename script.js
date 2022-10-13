@@ -18,24 +18,21 @@ const symbolCharCodes = generateArray(33, 47).concat(
 )
 
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const numberOfCharacters = characterInput.value;
-    const includeUppercase = uppercaseCheckbox.checked;
-    const includeNumbers = numberCheckbox.checked;
-    const includeSymbols = symbolCheckbox.checked;
-    const password = generatePassword(numberOfCharcters, includeUppercase, includeNumbers, includeSymbols);
 
-
-    
-    
-})
 
 function generatePassword(numberOfCharacters, includeUppercase, includeNumbers, includeSymbols) {
-    let pass = "";
+    let charCodes = lowercaseCharCodes;
+    if (includeUppercase) charCodes = charCodes.concat(uppercaseCharCodes);
+    if (includeNumbers) charCodes = charCodes.concat(numberCharCodes);
+    if (includeSymbols) charCodes = charCodes.concat(symbolCharCodes);
+
+    let passwordToReturn = [];
     for (let i = 0; i < numberOfCharacters; i++) {
-        pass += 
+        let characterCode = charCodes[Math.floor(Math.random() * charCodes.length)]
+        passwordToReturn.push(String.fromCharCode(characterCode));
+        
     }
+    return passwordToReturn.join("");
 }
 
 function generateArray(low, high) {
@@ -47,4 +44,17 @@ function generateArray(low, high) {
     return array;
 }
 
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const numberOfCharacters = characterInput.value;
+    const includeUppercase = uppercaseCheckbox.checked;
+    const includeNumbers = numberCheckbox.checked;
+    const includeSymbols = symbolCheckbox.checked;
+    const password = generatePassword(numberOfCharacters, includeUppercase, includeNumbers, includeSymbols);
+    passwordOutput.textContent = password;
+
+    
+    
+})
 
