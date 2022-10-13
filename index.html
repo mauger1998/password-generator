@@ -14,15 +14,23 @@
             <h1>Password Generator</h1>
             <h3>Password</h3>
             <form>
-                <label for="numberOfCharacters">Number Of Characters</label>
-                <input id="numberOfCharacters" type="range">
-                <input id="numberOfCharacters" type="number">
-                <label for="includeUppercase">Include Uppercase</label>
-                <input type="checkbox" id="includeUppercase">
-                <label for="includeNumbers">Include Numbers</label>
-                <input type="checkbox" id="includeNumbers">
-                <label for="includeSymbols">Include Symbols</label>
-                <input type="checkbox">
+                <div class="characterContainer">
+                    <label for="numberOfCharacters">Number Of Characters</label>
+                    <input class="range" id="numberOfCharacters" type="range">
+                    <input class="number"id="numberOfCharacters" type="number">
+                </div>
+                <div class="uppercaseContainer">
+                    <label for="includeUppercase">Include Uppercase</label>
+                    <input type="checkbox" id="includeUppercase">
+                </div>
+                <div class="numberContainer">
+                    <label for="includeNumbers">Include Numbers</label>
+                    <input type="checkbox" id="includeNumbers">
+                </div>
+                <div class="symbolContainer">
+                    <label for="includeSymbols">Include Symbols</label>
+                    <input type="checkbox" id="includeSymbols">
+                </div>
                 <button>Generate Passwrod</button>
                 
             </form>

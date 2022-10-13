@@ -12,6 +12,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .card {
@@ -20,11 +21,30 @@
     height:500px;
     display:flex;
     flex-direction: column;
+    gap:40px;
+    text-align:center;
+    padding-left:50px;
 
 
 }
 form {
     display:flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    gap:50px;
+}
+label {
+    font-size:25px;
+}
+
+.range {
+    width:350px;
+}
+
+.number {
+    width:40px;
+}
+.characterContainer {
+    display:flex;
+    gap:20px;
 }
