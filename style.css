@@ -85,3 +85,24 @@ button {
 input {
     cursor:pointer;
 }
+
+@media (max-width:700px) {
+    .card {
+        width:90%;
+        gap:10px;
+    }
+    h3 {
+        font-size:14px;
+        padding:0.4rem;
+    }
+    label {
+        font-size:16px;
+    }
+    .range {
+        width:50%;
+    }
+    button {
+        padding:0.5rem;
+        width:75%;
+    }
+}
